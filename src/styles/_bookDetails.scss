@@ -1,0 +1,420 @@
+@import './variables';
+
+.bookDetails {
+
+
+    &__generalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: max(10px, 1.82vw);
+        flex-wrap: wrap;
+
+    }
+
+
+    &__thumbnail {
+        // flex: 0 1 10%;
+        min-width: 170px;
+        width: 11.90vw;
+        // max-width: ;
+        min-height: 257px;
+        height: 17.25vw;
+        border-radius: max(2.08vh, 12px);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    &__cartButtons {
+        flex: 1 1 25%;
+        max-width: 80%;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid #FFFFFF;
+        border-radius: 30px;
+        padding: max(13px, 2.21vw) max(10px, 1.5vw);
+
+    }
+
+    &__cartButton {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        min-height: 39px;
+        font-weight: 600;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        white-space: nowrap;
+        padding: max(0.4em, 0.48vw) max(1em, 1.2vw);
+        margin-bottom: max(10px, 1.50vw);
+
+        background: #FFFFFF;
+        box-shadow: 4px 4px 4px rgba(61, 164, 238, 0.25);
+        backdrop-filter: blur(4px);
+        border-radius: 20px;
+        transform: translateY(0);
+        transition: transform .15s;
+
+        .--cart-color {
+            color: #15BDF4;
+        }
+
+        .--heart-color {
+            color: rgba(248, 48, 95, 0.58);
+        }
+
+        .--delivery-color {
+            color: #BBAAFF;
+        }
+
+        &__iconCont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: max(1.4em, 1.8vw);
+            height: max(1.4em, 1.8vw);
+            // height: 1.8em;
+            padding: 0.2em;
+
+            &.--cart-color {
+                background: #15BDF4;
+                box-shadow: 0px 0px 30px 3px rgba(117, 195, 239, 0.33);
+            }
+
+            &.--heart-color {
+                background: rgba(248, 48, 95, 0.58);
+                box-shadow: 0px 0px 30px 3px rgba(251, 135, 162, 0.31);
+            }
+
+        }
+
+        &.inactive {
+            .--delivery-color {
+                color: #a9b2b6;
+            }
+
+            & .toggleBtn {
+                background-color: #dedede;
+                border-color: #dedede;
+
+                &__switcher {
+                    background-color: #f7f7f7;
+                    right: 52%;
+
+                    transition: all .5s;
+                }
+
+                transition: all .5s;
+            }
+        }
+
+        &__icon {
+            // min-width: 1.25em;
+            // height: 1.18em;
+            width: 75%;
+            height: 75%;
+            fill: white;
+        }
+
+        .heartIcon {
+            margin-top: 5%;
+            width: 65%;
+            height: 65%;
+        }
+
+        .cartIcon {
+            margin-right: 3%;
+            margin-top: 5%;
+        }
+
+        >a {
+            font-size: clamp(0.8em, 1.07vw, 1.8em);
+        }
+
+        &:nth-child(3) {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-3px);
+            transition: all .3s;
+        }
+    }
+
+
+    .toggleBtn {
+        width: max(1.5em, 2.27vw);
+        height: max(.8em, 1.10vw);
+        margin: .15vw 0;
+        background: #BBAAFF;
+        border: 1px solid #B7E5FF;
+        box-shadow: 2px 2px 4px rgba(129, 128, 128, 0.25);
+        border-radius: 15px;
+
+
+        &__switcher {
+            background: #FFFFFF;
+            box-shadow: inset 2px 2px 4px rgba(111, 186, 255, 0.25);
+        }
+    }
+
+
+    &__detailsList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        // background: #C9E3FF;
+        background: #ffffff38;
+        box-shadow: 1px 2px 4px rgba(60, 49, 49, 0.1);
+        border-radius: 50px;
+        width: fit-content;
+        max-width: 100%;
+        padding: 1em max(7px, 2.53vw);
+        margin: max(20px, 3.5vw) auto;
+    }
+
+    .customScrollbar {
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        width: 11px;
+        background-color: rgb(208, 226, 226);
+        border: 1px solid rgba(211, 211, 211, 0.308);
+        border-radius: 20px;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        /* z-index: 50; */
+    }
+
+    .customScrollTrack {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .customScrollThumb {
+        position: relative;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: inset 1px 0px 2px rgba(188, 181, 181, 0.164);
+    }
+}
+
+.description {
+    background: #FFFFFF;
+    border-radius: max(30px, 3.47vh);
+    padding: 1.375em 1.8em;
+    min-width: 240px;
+    flex: 1 1 55%;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__text {
+            font-weight: 600;
+            font-size: clamp(1.25em, 1.56vw, 2.3em);
+            align-self: center;
+            color: #4B5053;
+            margin-bottom: max(7px, 0.45vw);
+        }
+
+        &__availability {
+            background: #FFFFFF;
+            box-shadow: 4px 4px 4px rgba(61, 164, 238, 0.25);
+            border-radius: max(20px, 1.30vw);
+            font-size: clamp(1em, 1.04vw, 2em);
+            font-weight: 600;
+            color: #34D186;
+            padding: 0.43em 1.06em;
+            text-align: center;
+            margin-bottom: max(7px, 0.45vw);
+
+
+            svg {
+                height: clamp(1em, 1.04vw, 2em);
+                stroke: #34D186;
+            }
+        }
+
+    }
+
+    &__author {
+        color: $t-blue;
+        font-size: clamp(1em, 1.10vw, 1.8em);
+        font-weight: 400;
+    }
+
+    &__rating {
+        margin-top: 3px;
+        margin-bottom: max(18px, 1.17vw);
+
+        &__star {
+            // width: max(20px, 1.3vw);
+            height: max(19px, 1.23vw);
+            fill: #C6DEFF;
+            // stroke: #DDD2FF;
+            // &.left {
+            //     fill: url("#leftStarGrad");
+            // }
+
+            // &.right {
+            //     fill: url("#rightStarGrad");
+            // }
+
+            &.empty {
+                fill: #dfeaf3;
+            }
+        }
+    }
+
+    &__text {
+        font-size: clamp(1em, 1.04vw, 1.6em);
+        line-height: 1.18em;
+        max-height: 125px;
+        border-radius: 10px;
+        overflow: auto;
+
+        &.scrollable {
+            padding-right: 15px;
+        }
+    }
+
+    &__cartOptions {
+        display: flex;
+        justify-content: space-around;
+        margin-top: max(21px, 1.36vw);
+        width: 100%;
+        flex-wrap: wrap;
+
+        .cartOption {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 3px;
+            background: rgba(75, 190, 255, 0.06);
+            box-shadow: 2px 2px 4px rgba(147, 145, 145, 0.25);
+            backdrop-filter: blur(4px);
+            padding: .56em .68em;
+            margin-bottom: 7px;
+            border-radius: max(10px, 0.65vw);
+            border: 1px solid transparent;
+            transform: translateY(0);
+            transition: transform .15s, box-shadow .15s;
+            box-sizing: border-box;
+
+            &__type {
+                font-weight: 300;
+                font-size: clamp(13px, 0.84vw, 1.5em);
+                line-height: 1em;
+                color: #4B5053;
+            }
+
+            &__price {
+                font-weight: 600;
+                font-size: clamp(12px, 0.78vw, 1.2em);
+                line-height: 1em;
+                color: #55B3D2;
+            }
+
+            &.inactive {
+                background: rgba(31, 44, 51, 0.13);
+
+                &:hover {
+                    cursor: default;
+                    background: rgba(31, 44, 51, 0.13);
+                    border: 1px solid transparent;
+                }
+
+                .cartOption__type {
+                    color: rgba(75, 80, 83, 0.55);
+                }
+
+                .cartOption__price {
+                    color: #83949A;
+                }
+            }
+
+            &:not(.inactive):hover {
+                cursor: pointer;
+                // background-color: darken(rgba(75, 190, 255, 0.06), 30%);
+                box-shadow: 4px 4px 6px rgba(147, 145, 145, 0.25);
+                transform: translateY(-2px);
+                transition: all 0.3s // border: 1px solid black;
+
+            }
+
+            &.selected {
+                box-shadow: none;
+                border: 1px solid #6486FD;
+
+                .cartOption__type {
+                    text-shadow: 0 0 0.01em #4B5053, 0 0 0.01em #4B5053;
+                }
+            }
+        }
+    }
+}
+
+
+.detailsItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 9px;
+    min-width: 110px;
+    background: #FFF9F9;
+    border-radius: max(15px, min(2.6vw, 40px));
+    padding: max(12px, 0.9vw) max(20px, 1.5vw);
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 600;
+
+    &__title {
+        font-size: clamp(0.8em, 0.9vw, 1.3em);
+    }
+
+    &__icon {
+        width: 40px;
+        height: 30px;
+    }
+
+    &__value {
+        max-width: 100%;
+        white-space: pre-line;
+        font-size: clamp(0.7em, 0.72vw, 1.3em);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .description__title__availability {
+        margin-bottom: 2.4vw;
+    }
+}
+
+@media (max-width: 380px) {
+    .bookDetails__cartButtons {
+        max-width: 100%;
+
+        a {
+            font-size: clamp(0.6em, 1.07vw, 1.8em);
+        }
+    }
+}

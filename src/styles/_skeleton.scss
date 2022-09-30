@@ -1,0 +1,56 @@
+.skeleton {
+    background-color: rgb(216, 224, 229);
+    animation: skeletonLoading 1s infinite alternate;
+    border-radius: 10px;
+    width: 100%;
+
+    &.--title {
+        // height: max(15px, );
+        width: 85%;
+        height: 30px;
+        margin-bottom: 25px;
+    }
+
+    &.--line {
+        height: 15px;
+        margin-bottom: 10px;
+
+        &.--small {
+            width: 30%;
+        }
+
+        &.--medium {
+            width: 60%;
+        }
+    }
+
+    &.--image {
+        height: 80%;
+        width: 80%;
+    }
+
+    &.--button {
+        height: 35px;
+        margin-bottom: 10px;
+
+        &.--small {
+            width: 70px;
+        }
+
+        &.--square {
+            height: 80%;
+            width: 40px;
+        }
+    }
+}
+
+
+@keyframes skeletonLoading {
+    0% {
+        background-color: rgb(216, 224, 229);
+    }
+
+    100% {
+        background-color: rgb(240, 243, 245);
+    }
+}

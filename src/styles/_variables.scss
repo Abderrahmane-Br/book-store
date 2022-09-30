@@ -1,0 +1,86 @@
+// text
+
+$t-light-dark: #4B5053;
+$t-blue: #55B3D2;
+// $t-blue: #35C0EE;
+$t-cart: #15BDF4;
+$t-wishlist: #f8305f94;
+$t-deliver: #88C1FF;
+
+
+// show/hide base on width
+
+.--mid-active,
+.--sm-active {
+    display: none;
+}
+
+///////
+
+
+@mixin hideScrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+
+@mixin iconBtn($padding) {
+    .iconBtn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: $padding;
+        box-sizing: content-box;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:not([disabled]):hover {
+            cursor: pointer;
+        }
+
+        &[disabled] {
+            svg {
+                stroke: rgb(193, 190, 190);
+            }
+        }
+    }
+}
+
+
+@mixin floatImgHover($item) {
+    #{$item} {
+        transform: translateY(-5%);
+        transition: all .7s;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .--mid-active {
+        display: block;
+    }
+
+    .--mid-inactive {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .--sm-active {
+        display: block;
+    }
+
+    .--sm-inactive {
+        display: none;
+    }
+}
