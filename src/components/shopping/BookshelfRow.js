@@ -21,7 +21,7 @@ function BookshelfRow({ volume }) {
             description={vol.volumeInfo.description}
             author={vol.volumeInfo?.authors[0]}
             // isInCart={vol.isInCart}
-            isInWishlist={vol.isInWishlist}
+            // isInWishlist={vol.isInWishlist}
             price={vol.saleInfo?.listPrice?.amount || vol.paperbackPrice}
         />
     })

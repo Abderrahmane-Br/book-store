@@ -54,7 +54,7 @@ function BookDetails() {
                     thumbnail: book.volumeInfo.imageLinks.thumbnail,
                     price: bookPrice,
                     types: selectedTypes.map(type => ({ name: type, quantity: 1 })),
-                    inCart: true
+                    // inCart: true
                 })
             );
             popModal(2);
@@ -73,7 +73,7 @@ function BookDetails() {
                 title: book.volumeInfo.title,
                 thumbnail: book.volumeInfo.imageLinks.thumbnail,
                 price: bookPrice,
-                inWishlist: true
+                // inWishlist: true
             }));
             popModal(2);
         }

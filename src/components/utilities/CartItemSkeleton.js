@@ -1,6 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../../redux/cart/cartSlice";
-import { findBookById, formatTitle, popModal } from "../utilities/helperFun";
+import { formatTitle } from "../utilities/helperFun";
 
 function CartItemSkeleton({
     type,
@@ -10,23 +8,6 @@ function CartItemSkeleton({
 }) {
 
     const isWish = type === "wishlist";
-    const book = findBookById(useSelector(state => state.books.list), data.id);
-    const dispatch = useDispatch();
-    function addItemToCart(e) {
-        if (book) {
-            if (book.isInCart)
-                popModal(1);
-            else {
-                dispatch(addItem({
-                    ...data,
-                    types: [{ name: "Paperback", quantity: 1 }],
-                    inCart: true
-                }));
-                book.isInCart = true;
-                popModal(2);
-            }
-        }
-    }
 
     return (
         <div className="cart__item">
@@ -40,10 +21,7 @@ function CartItemSkeleton({
                 {!isWish && <span className="cart__item__amount">{data.totalPrice.toFixed(2)}$</span>}
                 {isWish && <>
                     <span className="cart__item__amount">{data.price}$</span>
-                    <button
-                        className="cart__item__addToCart"
-                        onClick={addItemToCart}
-                    >Add to Cart</button>
+                    {children.addToCart}
                 </>
                 }
                 {

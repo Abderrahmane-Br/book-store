@@ -141,24 +141,20 @@ export const customScrollbar = function (el) {
     const observer = new ResizeObserver(entries => {
         for (const entry of entries) {
             const isAppended = parent.querySelector(".customScrollbar");
-            console.log("resized", el.clientHeight, el.scrollHeight);
             heightRatio = el.clientHeight * 100 / el.scrollHeight;
             scrollbar.style.height = el.clientHeight + 'px';
-            console.log(scrollbar);
 
             if (el.offsetHeight < el.scrollHeight) {
                 if (isAppended) {
                     parent.querySelector(".customScrollThumb").style.height = heightRatio + '%';
                 }
                 else {
-                    console.log("appending scrollbar");
                     el.style.position = "relative";
                     parent.appendChild(scrollbar);
                     el.classList.add("scrollable");
                 }
             }
             else if (isAppended) {
-                console.log("removing scrollbar");
                 parent.removeChild(isAppended);
                 el.classList.remove("scrollable");
             }

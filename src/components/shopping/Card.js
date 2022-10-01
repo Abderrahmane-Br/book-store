@@ -22,7 +22,7 @@ function Card(props) {
             //                 ...payload
             //             }));
             // }
-            if (item?.inCart)
+            if (item)
                 popModal(1);
             else {
                 dispatch(
@@ -41,7 +41,6 @@ function Card(props) {
                         title: payload.title,
                         thumbnail: payload.thumbnail,
                         price: payload.price,
-                        inWishlist: true
                     }));
             }
             else {
@@ -71,10 +70,9 @@ function Card(props) {
                         thumbnail: props.imageUrl,
                         price: props.price,
                         types: [{ name: "Paperback", quantity: 1 }],
-                        inCart: true
                     })}
-                    cartChecked={item?.inCart}
-                    wishChecked={wish?.inWishlist}
+                    cartChecked={item ? true : false}
+                    wishChecked={wish ? true : false}
                 />
                 <div className="card__face">
                     <div className="card__imageCont">
