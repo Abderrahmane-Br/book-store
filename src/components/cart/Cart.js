@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart, updateAmount, updateTotal } from "../../redux/cart/cartSlice";
+import { clearCart } from "../../redux/cart/cartSlice";
 import { customScrollbar } from "../utilities/helperFun";
 import CartSkeleton from "../utilities/CartSkeleton";
 import CartItem from "./CartItem";
@@ -21,8 +21,6 @@ function Cart() {
     ));
     function clear() {
         dispatch(clearCart());
-        dispatch(updateAmount());
-        dispatch(updateTotal());
     }
 
     useEffect(() => customScrollbar(document.querySelector(".cart__content")), [items]);

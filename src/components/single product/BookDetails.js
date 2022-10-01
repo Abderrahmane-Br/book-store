@@ -59,7 +59,6 @@ function BookDetails() {
             );
             popModal(2);
         }
-        dispatch(updateAmount());
     }
 
     function addToWishlist(e) {

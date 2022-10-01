@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, updateAmount } from "../../redux/cart/cartSlice";
+import { addItem } from "../../redux/cart/cartSlice";
 import { addWish } from "../../redux/wishlist/wishlistSlice";
 import { formatTitle, popModal, ratingStars } from "../utilities/helperFun";
 import ShopBtn from "./ShopBtn";
@@ -31,7 +31,6 @@ function Card(props) {
                     }));
                 popModal(2);
             }
-            dispatch(updateAmount());
         }
         else {
             if (!wish) {

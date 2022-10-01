@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import { updateQt, updateTotal, updateAmount } from "../../redux/cart/cartSlice";
+import { updateQt } from "../../redux/cart/cartSlice";
 import { applyPrecentage } from "../utilities/helperFun";
 
 function QuantityCounter({ id, type, totalPrice }) {
@@ -21,7 +21,6 @@ function QuantityCounter({ id, type, totalPrice }) {
             })
         );
         setQuantity(quantity + 1);
-        dispatch(updateAmount())
     }
 
     function decrement() {
@@ -35,13 +34,11 @@ function QuantityCounter({ id, type, totalPrice }) {
             })
         );
         setQuantity(quantity - 1);
-        dispatch(updateAmount())
     }
 
     useEffect(() => {
         const newTotal = quantity * applyPrecentage(item.price, type.name);
         totalPrice(newTotal);
-        dispatch(updateTotal());
     }, [quantity])
 
     return (

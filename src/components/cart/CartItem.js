@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeItem, updateAmount, updateTotal } from "../../redux/cart/cartSlice";
+import { removeItem, } from "../../redux/cart/cartSlice";
 import CartItemSkeleton from "../utilities/CartItemSkeleton";
 import RemoveItem from "../utilities/RemoveItem";
 import QuantityCounter from "./QuantityCounter";
@@ -21,9 +21,6 @@ function CartItem({
             id,
             typeName: type.name
         }));
-
-        dispatch(updateAmount());
-        dispatch(updateTotal());
     }
 
     return (
