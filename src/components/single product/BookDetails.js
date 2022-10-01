@@ -90,10 +90,10 @@ function BookDetails() {
                 <div className="bookDetails__generalInfo">
                     <div className="bookDetails__thumbnail">
                         {/* <img src={book.volumeInfo?.imageLinks?.thumbnail?.replace("zoom=1", "zoom=3")} alt="" /> */}
-                        {/* <img src={book.volumeInfo?.imageLinks?.thumbnail} alt="" />  THIS WHAT SHOULD BE USED*/}
                         {isLoading ?
                             <Skeleton type="image" />
-                            : <img src="http://127.0.0.1:8081/blankCover.jpg" alt="" />
+                            : <img src={book.volumeInfo?.imageLinks?.thumbnail} alt="" />
+                            // : <img src="http://127.0.0.1:8081/blankCover.jpg" alt="" /> => for offline use
                         }
                     </div>
                     <div className="bookDetails__description description">

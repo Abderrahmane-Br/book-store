@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Card from "./Card";
 
 function BookshelfRow({ volume }) {
@@ -14,14 +14,12 @@ function BookshelfRow({ volume }) {
             id={vol.id}
             title={vol.volumeInfo.title}
             // imageUrl={vol.volumeInfo?.imageLinks?.thumbnail?.replace("zoom=1", "zoom=2")}
-            // imageUrl={vol.volumeInfo?.imageLinks?.thumbnail}
-            imageUrl={"http://127.0.0.1:8081/Cover3.png"}
+            imageUrl={vol.volumeInfo?.imageLinks?.thumbnail}
+            // imageUrl={"http://127.0.0.1:8081/Cover3.png"}  => for offline use as a placeholder
             rating={vol.volumeInfo.averageRating || vol.ratingFB}
             ratingCount={vol.volumeInfo.ratingCount}
             description={vol.volumeInfo.description}
             author={vol.volumeInfo?.authors[0]}
-            // isInCart={vol.isInCart}
-            // isInWishlist={vol.isInWishlist}
             price={vol.saleInfo?.listPrice?.amount || vol.paperbackPrice}
         />
     })
@@ -47,13 +45,6 @@ function BookshelfRow({ volume }) {
                 behavior: "smooth"
             })
     }
-
-    // useEffect(() => {
-    //     const bookshelf = document.querySelector(".bookshelf__cardsCont");
-    //     bookshelf.addEventListener("scroll", toggleArrows);
-
-    //     return bookshelf.removeEventListener("scroll", toggleArrows);
-    // }, [])
 
     return (
         <div className="bookshelf__rowCont">
