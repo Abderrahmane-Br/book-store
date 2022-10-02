@@ -13,7 +13,6 @@ function BookshelfRow({ volume }) {
             key={vol.id}
             id={vol.id}
             title={vol.volumeInfo.title}
-            // imageUrl={vol.volumeInfo?.imageLinks?.thumbnail?.replace("zoom=1", "zoom=2")}
             imageUrl={vol.volumeInfo?.imageLinks?.thumbnail}
             // imageUrl={"http://127.0.0.1:8081/Cover3.png"}  => for offline use as a placeholder
             rating={vol.volumeInfo.averageRating || vol.ratingFB}
@@ -27,7 +26,6 @@ function BookshelfRow({ volume }) {
     function toggleArrows(e) {
         if (bookshelf.current.scrollLeft === 0)
             leftArrow.current.classList.add("inactive");
-        // rightArrow.current.classList.remove("inactive");
         else
             leftArrow.current.classList.remove("inactive");
 

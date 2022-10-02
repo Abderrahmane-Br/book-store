@@ -8,7 +8,6 @@ export const getBooks = createAsyncThunk("books/getBooks", () => {
         promises.push(fetch(`https://www.googleapis.com/books/v1/volumes?q=${cat}&orderBy=newest`)
             .then(res => res.json()
                 .then(data => {
-                    console.log("data: ", cat, JSON.stringify(data));
                     return ({
                         cat,
                         volume: data.items.map(item => ({

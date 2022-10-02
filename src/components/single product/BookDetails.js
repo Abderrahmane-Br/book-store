@@ -89,7 +89,6 @@ function BookDetails() {
             <div className="content__main bookDetails">
                 <div className="bookDetails__generalInfo">
                     <div className="bookDetails__thumbnail">
-                        {/* <img src={book.volumeInfo?.imageLinks?.thumbnail?.replace("zoom=1", "zoom=3")} alt="" /> */}
                         {isLoading ?
                             <Skeleton type="image" />
                             : <img src={book.volumeInfo?.imageLinks?.thumbnail} alt="" />

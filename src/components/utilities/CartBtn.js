@@ -7,7 +7,6 @@ function CartBtn({ type }) {
         isCart
             ? state.cart.amount
             : state.wishlist.length);
-    // console.log(count);
     return (
         <Link to={`/${type}`} className={`cartBtn ${type}Icon`}>
             {

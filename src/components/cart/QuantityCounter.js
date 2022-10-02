@@ -43,7 +43,6 @@ function QuantityCounter({ id, type, totalPrice }) {
 
     return (
         <div className="cart__item__quantity quantityCounter">
-            {/* <span className="quantityCounter__plus"></span> */}
             <button
                 className="quantityCounter__plusBtn iconBtn"
                 onClick={increment}
@@ -64,7 +63,6 @@ function QuantityCounter({ id, type, totalPrice }) {
                     <path d="M1 1H4H7" strokeWidth="2" strokeLinecap="round" />
                 </svg>
             </button>
-            {/* <span className="quantityCounter__minus"></span> */}
         </div>
     )
 }

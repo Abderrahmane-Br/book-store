@@ -16,7 +16,6 @@ function ShoppingMain() {
                 const sh = e.target.scrollHeight;
                 const st = e.target.scrollTop;
                 const ch = e.target.clientHeight;
-                // const activeIdx = Math.ceil(((st - 3 * ch / 2) * 100 / sh) / 25);
                 const currentIdx = parseInt((st + ch / 3) / (sh / 5));
                 if (!sidebarItems)
                     sidebarItems = document.querySelectorAll(".sidebar__list__item");
