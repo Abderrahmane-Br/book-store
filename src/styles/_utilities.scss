@@ -132,22 +132,11 @@
     padding: 0 max(7px, 1.36vw);
     min-height: fit-content;
     // height: 3.32vw;
-    margin: 0 auto 35px;
+    margin: 0 auto max(15px, 3.77vw);
     border-radius: .95vw;
     background-color: rgba(255, 255, 255, 42%);
-    transform: translateY(0);
-    transition: transform .1s;
 
-    &:hover {
-        cursor: pointer;
-        transform: translateY(-8%);
-        transition: all .2s;
-
-        img {
-            transform: translateY(-32%);
-            transition: all .3s .1s;
-        }
-    }
+    @include itemHoverFloat(-32%);
 
     &__img {
         position: relative;

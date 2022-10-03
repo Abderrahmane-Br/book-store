@@ -2,20 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setResults } from "../../redux/search/searchSlice";
 import SearchDrop from "./SearchbarDrop"
-import SearchResult from "./SearchResult";
 
 function Searchbar() {
     const { list } = useSelector(state => state.books);
-    const results = useSelector(state => state.search);
     const [searchVal, setSearchVal] = useState("");
     const [size, setSize] = useState(0);
 
     const dispatch = useDispatch();
 
     const searchbar = useRef();
-    const els = results.map((el, indx) => (
-        <SearchResult key={indx} {...el} />
-    ));
 
     function handleChange(e) {
         const { value } = e.target;
@@ -32,8 +27,8 @@ function Searchbar() {
                     )
                         tempRes.push({
                             id: vol.id,
-                            title: vol.volumeInfo.title,
-                            image: vol.volumeInfo.imageLinks.thumbnail
+                            title: volInfo.title,
+                            thumbnail: volInfo.imageLinks.thumbnail
                         });
                 }));
             dispatch(setResults(tempRes));
@@ -92,7 +87,6 @@ function Searchbar() {
                 </svg>}
 
             <SearchDrop
-                children={els}
                 width={size}
             />
         </div>

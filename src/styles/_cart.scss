@@ -50,7 +50,7 @@
         max-height: 80%;
         gap: 40px;
         // padding-top: max(40px, 3vw);
-        padding-top: max(20px, 2vw);
+        padding-top: max(25px, 2.2vw);
         overflow: auto;
         border-radius: max(10px, 1.2vw);
 
@@ -87,6 +87,7 @@
         border-radius: max(11px, 1.3vw);
         font-size: 18px;
 
+        @include itemHoverFloat(-7%);
 
         &__thumbnail {
             position: relative;
