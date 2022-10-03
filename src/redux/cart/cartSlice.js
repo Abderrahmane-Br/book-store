@@ -1,31 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { applyPrecentage } from "../../components/utilities/helperFun";
+import { applyPrecentage, updateSessionCache } from "../../components/utilities/helperFun";
 
-const initialState = {
+const cartCache = JSON.parse(sessionStorage.getItem("bookstore/cart"));
+const initialState = cartCache || {
     items: [],
     amount: 0,
     total: 0.00
 }
 
+console.log(initialState)
 const cartSlice = createSlice({
     name: "cart",
     initialState,
 
     reducers: {
-        updateAmount: (state) => {  // Counts the total number of items by cumilating up each one's quantity
-            state.amount = state.items.reduce((a, b) => {
-                return a + b.types.reduce((a, b) => a + b.quantity, 0)
-            }, 0);
-        },
-
-        updateTotal: (state) => { // Counts the total price
-            state.total = state.items.reduce((accItem, currItem) => {
-                return accItem + currItem.types
-                    .reduce((accType, currType) =>
-                        accType + currType.quantity * applyPrecentage(currItem.price, currType.name), 0);
-            }, 0)
-        },
-
         addItem: (state, action) => {
             state.items.push(action.payload);
             console.log(cartSlice.caseReducers)
@@ -55,6 +43,26 @@ const cartSlice = createSlice({
             cartSlice.caseReducers.updateAmount(state);
             cartSlice.caseReducers.updateTotal(state);
         },
+
+        updateAmount: (state) => {  // Counts the total number of items by cumilating up each one's quantity
+            updateSessionCache("bookstore/cart", JSON.stringify(state));
+
+
+            state.amount = state.items.reduce((a, b) => {
+                return a + b.types.reduce((a, b) => a + b.quantity, 0)
+            }, 0);
+        },
+
+        updateTotal: (state) => { // Counts the total price
+            updateSessionCache("bookstore/cart", JSON.stringify(state));
+
+            state.total = state.items.reduce((accItem, currItem) => {
+                return accItem + currItem.types
+                    .reduce((accType, currType) =>
+                        accType + currType.quantity * applyPrecentage(currItem.price, currType.name), 0);
+            }, 0)
+        },
+
 
         clearCart: (state) => {
             state.items = [];

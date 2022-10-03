@@ -171,3 +171,10 @@ function offset(el) {
 
     return { top: el.offsetTop, left: el.offsetLeft }
 }
+
+
+export function updateSessionCache(cacheName, value) {
+    if (cacheName && value) {
+        sessionStorage.setItem(cacheName, value);
+    }
+}
