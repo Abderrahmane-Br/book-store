@@ -143,16 +143,13 @@ export const customScrollbar = function (el) {
             const isAppended = parent.querySelector(".customScrollbar");
             heightRatio = el.clientHeight * 100 / el.scrollHeight;
             scrollbar.style.height = el.clientHeight + 'px';
-
             if (el.offsetHeight < el.scrollHeight) {
-                if (isAppended) {
-                    parent.querySelector(".customScrollThumb").style.height = heightRatio + '%';
-                }
-                else {
+                if (!isAppended) {
                     el.style.position = "relative";
                     parent.appendChild(scrollbar);
                     el.classList.add("scrollable");
                 }
+                parent.querySelector(".customScrollThumb").style.height = heightRatio + '%';
             }
             else if (isAppended) {
                 parent.removeChild(isAppended);
