@@ -1667,7 +1667,7 @@ body {
   top: 25px;
   right: 20px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: white;
 }
 .main__navMenu__close:hover {
   cursor: pointer;
@@ -1698,6 +1698,11 @@ body {
 }
 .main__navMenu__back {
   font-weight: 600;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
 }
 .main__navMenu__back:hover {
   cursor: pointer;

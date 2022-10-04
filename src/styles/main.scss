@@ -80,7 +80,7 @@ body {
             top: 25px;
             right: 20px;
             border-radius: 50%;
-            background-color: rgba(white, 50%);
+            background-color: white;
 
             &:hover {
                 cursor: pointer;
@@ -117,6 +117,9 @@ body {
             // display: inline-block;
             // margin-top: 7vw;
             font-weight: 600;
+            margin: 0 auto;
+            width: fit-content;
+            justify-content: center;
 
             &:hover {
                 cursor: pointer;

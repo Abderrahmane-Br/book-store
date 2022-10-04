@@ -22,7 +22,7 @@ function Home() {
                 {/* <h3 className="main__navMenu__sectionTitle">Navigate to</h3> */}
                 <ul className="main__navMenu__list">
                     <li>
-                        <Link className="bookDetails__cartButton --cart-color --space-between" to="#Social" onClick={closeNavMenu}>
+                        <Link className="bookDetails__cartButton --cart-color --space-between" to="/cart" onClick={closeNavMenu}>
                             My Cart
                             <div className="bookDetails__cartButton__iconCont --cart-color">
                                 <svg className="bookDetails__cartButton__icon cartIcon" viewBox="0 0 29 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@ function Home() {
                         <a className="bookDetails__cartButton" href="#Art" onClick={closeNavMenu}>Art</a>
                     </li>
                 </ul>
-                <span className="main__navMenu__back" onClick={closeNavMenu}>
+                <span className="main__navMenu__back bookDetails__cartButton" onClick={closeNavMenu}>
                     Go back
                 </span>
             </div>
