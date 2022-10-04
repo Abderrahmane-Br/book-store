@@ -69,7 +69,7 @@ function Searchbar() {
             <input
                 type="text"
                 className="searchbar__input"
-                placeholder="Search"
+                placeholder="Search by title, author or ISBN"
                 value={searchVal}
                 onChange={handleChange}
                 onKeyUp={handleKeyUp}

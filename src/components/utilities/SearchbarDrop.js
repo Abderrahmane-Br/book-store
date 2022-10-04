@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setResults } from "../../redux/search/searchSlice";
 import { customScrollbar } from "./helperFun";
 
 import SearchResult from "./SearchResult";
@@ -10,11 +11,14 @@ function SearchbarDrop({ width }) {
         <SearchResult key={indx} {...el} />
     ));
 
+    const dispatch = useDispatch();
 
     function closeSearchDrop(e) {
         const input = document.querySelector(".searchbar__input");
-        if (e.target !== input)
+        if (e.target !== input) {
             document.querySelector(".searchbar").classList.remove("dropList");
+            dispatch(setResults([]))
+        }
     }
 
     useEffect(() => {
