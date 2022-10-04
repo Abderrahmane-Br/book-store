@@ -4,6 +4,7 @@ import { clearWishList, updateAmount } from "../../redux/wishlist/wishlistSlice"
 import { customScrollbar } from "../utilities/helperFun";
 import CartSkeleton from "../utilities/CartSkeleton";
 import WishlistItem from "./WishlistItem";
+import BackBtn from "../utilities/BackBtn";
 
 function Wishlist() {
     const items = useSelector(state => state.wishlist);
@@ -24,16 +25,19 @@ function Wishlist() {
     useEffect(() => customScrollbar(document.querySelector(".cart__content")), [items]);
 
     return (
-        <CartSkeleton
-            type="wishlist"
-            clear={clear}
-            data={
-                {
-                    amount: items.length,
-                    elements: cartEls
+        <div className="content wishlistPage">
+            <BackBtn />
+            <CartSkeleton
+                type="wishlist"
+                clear={clear}
+                data={
+                    {
+                        amount: items.length,
+                        elements: cartEls
+                    }
                 }
-            }
-        />
+            />
+        </div>
     )
 }
 export default Wishlist

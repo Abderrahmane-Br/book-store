@@ -4,6 +4,7 @@ import { clearCart } from "../../redux/cart/cartSlice";
 import { customScrollbar } from "../utilities/helperFun";
 import CartSkeleton from "../utilities/CartSkeleton";
 import CartItem from "./CartItem";
+import BackBtn from "../utilities/BackBtn";
 
 
 function Cart() {
@@ -27,6 +28,7 @@ function Cart() {
 
     return (
         <div className="content cartPage">
+            <BackBtn />
             <CartSkeleton
                 type="cart"
                 clear={clear}
