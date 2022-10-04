@@ -1,7 +1,15 @@
 @import './variables';
 
-.content.cartPage {
-    width: 100%;
+.content {
+
+    &.cartPage,
+    &.wishlistPage {
+        width: 100%;
+
+        .backBtnCont {
+            position: absolute;
+        }
+    }
 }
 
 .cart {
@@ -113,12 +121,18 @@
 
 
                 & button:first-of-type {
-                    padding: min(max(3px, .78vw), 8px) min(max(7px, .98vw), 10px);
+                    // padding: min(max(3px, .78vw), 8px) min(max(7px, .98vw), 10px);
+                    padding: max(3px, .5em) max(7px, 1em);
                     background-color: #ffffffb1;
                     border-radius: max(5px, .65vw);
                     outline: none;
                     border: none;
-                    font-size: clamp(7px, 1.17vw, .8em);
+                    font-size: clamp(7px, 1vw, 1.4em);
+
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -157,31 +171,18 @@
         }
     }
 
+    @include customScrollbar;
+
     &>.customScrollbar {
-        position: absolute;
-        top: 0px;
-        left: 95%;
         width: 9px;
+        left: 95%;
         background: rgba(255, 255, 255, 0.22);
         border-radius: 50px;
-        box-sizing: border-box;
-        // transform: translateX(-100%);
-        /* z-index: 50; */
+        transform: translateX(0);
     }
 
-    .customScrollTrack {
-        position: relative;
-        top: 0;
-        width: 100%;
-        height: 100%;
-    }
 
     .customScrollThumb {
-        position: relative;
-        top: 0px;
-        left: 0;
-        width: 100%;
-        height: 20px;
         background: rgba(255, 255, 255, 0.47);
         border-radius: 50px;
     }
@@ -226,7 +227,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 928px) {
     .cart {
         width: 80%;
 
@@ -248,15 +249,15 @@
             height: fit-content;
 
             &__title {
-                font-size: max(8px, 1.6vw);
+                font-size: max(8px, 1.8vw);
             }
 
             &__type {
-                font-size: max(7px, 1.4vw);
+                font-size: max(7px, 1.5vw);
             }
 
             .quantityCounter {
-                font-size: max(7px, 1.2vw);
+                font-size: max(7px, 1.4vw);
 
                 &__plus {
                     width: .8vw;
@@ -270,7 +271,7 @@
             }
 
             &__amount {
-                font-size: max(7px, 1.3vw);
+                font-size: max(7px, 1.4vw);
             }
 
             &__remove {
@@ -303,6 +304,7 @@
 
                     & button:first-of-type {
                         font-size: max(7px, 1.9vw);
+                        padding: max(1px, 0.5em) max(7px, 0.8em);
                         grid-column: 1 / 2;
                         grid-row: 2 / 3;
                     }

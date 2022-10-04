@@ -49,7 +49,7 @@
     border-radius: 14px;
     display: flex;
     padding-left: max(10px, 1.43vw);
-    padding-right: 20px;
+    padding-right: max(10px, 1.2vw);
     align-items: center;
     overflow: hidden;
 
@@ -60,6 +60,24 @@
 
         .searchbar__dropCont {
             display: flex;
+            width: fit-content;
+            background: rgba(238, 248, 255, 0.64);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(20px);
+            border-bottom-right-radius: 14px;
+            border-bottom-left-radius: 14px;
+            @include customScrollbar;
+
+            .customScrollbar {
+                width: .5vw;
+                left: 99%;
+                max-height: 98%;
+                background: rgba(255, 255, 255, 0.74);
+            }
+
+            .customScrollThumb {
+                background: rgba($t-blue, .5);
+            }
         }
     }
 
@@ -89,7 +107,7 @@
     }
 
     &__cross {
-        height: 33%;
+        height: 27%;
 
         &:hover {
             cursor: pointer;
@@ -111,13 +129,8 @@
         width: 100%;
         max-height: 45vh;
         min-height: 70%;
-        padding-top: 10px;
-        background: rgba(238, 248, 255, 0.64);
-        -webkit-backdrop-filter: blur(8px);
-        backdrop-filter: blur(20px);
-        border-top: 1px solid #35C0EE;
-        border-bottom-right-radius: 14px;
-        border-bottom-left-radius: 14px;
+        padding-top: max(10px, 1.95vw);
+        border-top: 1px solid $t-blue;
         overflow: auto;
 
         @include hideScrollbar;

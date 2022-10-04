@@ -93,7 +93,9 @@ export const formatTitle = function (title, n) {
 
 export const customScrollbar = function (el) {
     const parent = el.parentNode;
-    parent.style.position = "relative";
+    const parentPos = getComputedStyle(parent).position;
+    if (parentPos === "static")
+        parent.style.position = "relative";
 
     const elProps = [
         { "scrollbar-width": 'none' },
@@ -112,7 +114,7 @@ export const customScrollbar = function (el) {
     //////////Creating the scrollbar
     let scrollbar = document.createElement('div');
     let scrollThumb = document.createElement('div');
-    let scrollbarStyle = `position: absolute; top: ${elPos.top}px;`;
+    let scrollbarStyle = `position: absolute; top: ${elPos.top + 2}px;`;
     let scrollThumbStyle = `position: absolute; top: 0px; left: 0px;`;
     scrollbar.classList.add('customScrollbar');
     scrollThumb.classList.add('customScrollThumb');
