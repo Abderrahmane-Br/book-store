@@ -18,7 +18,7 @@ function BookshelfRow({ volume }) {
             rating={vol.volumeInfo.averageRating || vol.ratingFB}
             ratingCount={vol.volumeInfo.ratingCount}
             description={vol.volumeInfo.description}
-            author={vol.volumeInfo?.authors[0]}
+            author={vol.volumeInfo?.authors?.[0]}
             price={vol.saleInfo?.listPrice?.amount || vol.paperbackPrice}
         />
     })
