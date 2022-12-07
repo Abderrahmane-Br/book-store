@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Abderrahmane-Br/book-store/static/css/main.27c996d2.css",
+    "main.js": "/Abderrahmane-Br/book-store/static/js/main.42acf65a.js",
+    "static/media/gradient4.png": "/Abderrahmane-Br/book-store/static/media/gradient4.5edf634de84faa117376.png",
+    "static/media/blankCover.jpg": "/Abderrahmane-Br/book-store/static/media/blankCover.3609b0e6c96863b5fddd.jpg",
+    "static/media/earth-svgrepo-com.svg": "/Abderrahmane-Br/book-store/static/media/earth-svgrepo-com.d6a422f7904ac781fc81625893219927.svg",
+    "static/media/calendar-svgrepo-com.svg": "/Abderrahmane-Br/book-store/static/media/calendar-svgrepo-com.1e782aa664a611fb05086ebbb9edf8d6.svg",
+    "static/media/pages.svg": "/Abderrahmane-Br/book-store/static/media/pages.96a8e1d004173a4c4c3561d33079c0e0.svg",
+    "static/media/product-barcode-svgrepo-com.svg": "/Abderrahmane-Br/book-store/static/media/product-barcode-svgrepo-com.39e1e19ab57379f03f6798e024c4809d.svg",
+    "static/media/building-svgrepo-com.svg": "/Abderrahmane-Br/book-store/static/media/building-svgrepo-com.07b48487b29b99c07a80bc590d05f3a0.svg",
+    "index.html": "/Abderrahmane-Br/book-store/index.html",
+    "main.27c996d2.css.map": "/Abderrahmane-Br/book-store/static/css/main.27c996d2.css.map",
+    "main.42acf65a.js.map": "/Abderrahmane-Br/book-store/static/js/main.42acf65a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27c996d2.css",
+    "static/js/main.42acf65a.js"
+  ]
+}
