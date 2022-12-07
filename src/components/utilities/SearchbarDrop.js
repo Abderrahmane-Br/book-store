@@ -17,7 +17,7 @@ function SearchbarDrop({ width }) {
         const input = document.querySelector(".searchbar__input");
         if (e.target !== input) {
             document.querySelector(".searchbar").classList.remove("dropList");
-            if (input.ariaValueMax.length === 0)
+            if (input.value.length === 0)
                 dispatch(setResults([]));
         }
     }
